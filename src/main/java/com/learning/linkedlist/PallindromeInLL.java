@@ -1,4 +1,4 @@
-package com.linkedlist;
+package com.learning.linkedlist;
 
 public class PallindromeInLL {
 	static Node head ;

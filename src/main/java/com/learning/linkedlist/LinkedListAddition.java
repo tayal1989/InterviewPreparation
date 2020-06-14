@@ -1,4 +1,4 @@
-package com.linkedlist;
+package com.learning.linkedlist;
 
 public class LinkedListAddition {
 	
