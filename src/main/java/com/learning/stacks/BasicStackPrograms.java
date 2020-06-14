@@ -50,9 +50,11 @@ public class BasicStackPrograms {
 		System.out.println("Is empty : " + bsp.isEmpty());
 		
 		bsp.push(10);
+		
 		bsp.push(20);
 		System.out.println("Is full : " + bsp.isFull());
-		bsp.push(30);
+		
+		bsp.push(5);
 		
 		System.out.println("Is full : " + bsp.isFull());
 		System.out.println("Is empty : " + bsp.isEmpty());
