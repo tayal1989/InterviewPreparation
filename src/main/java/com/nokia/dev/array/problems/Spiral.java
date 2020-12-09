@@ -1,7 +1,5 @@
 package com.nokia.dev.array.problems;
 
-import java.util.Scanner;
-
 /**
  * <h1>Spiral</h1>
  * The Spiral.java program will print a given matrix in spiral form

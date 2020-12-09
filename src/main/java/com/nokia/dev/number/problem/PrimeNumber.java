@@ -37,7 +37,9 @@ public class PrimeNumber {
 			System.out.println("Number is not prime");
 		} else {
 			System.out.println("Number is prime");
-		}		
+		}
+		
+		sc.close();
 		
 	}
 

@@ -7,9 +7,7 @@ public class SquareRootOfNumber {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		Scanner sc = new Scanner(System.in) ;
-		int option ;
-		int loop = 0 ;		
+		Scanner sc = new Scanner(System.in) ;		
 		
 		{
 	        //Number for which square root is to be found
@@ -20,7 +18,7 @@ public class SquareRootOfNumber {
 	 
 	    }
 	 
-	    
+	    sc.close();
 		
 	}
 	
