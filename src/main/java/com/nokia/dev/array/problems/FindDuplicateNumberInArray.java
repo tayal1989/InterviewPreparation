@@ -1,5 +1,9 @@
 package com.nokia.dev.array.problems;
 
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Set;
+
 /**
  * <h1>FindDuplicateNumberInArray</h1>
  * The FindDuplicateNumberInArray.java program will find all duplicate numbers
@@ -38,6 +42,20 @@ public class FindDuplicateNumberInArray {
 					j = i + 1 ;
 				}
 			}
+		}
+		
+		Set<Integer> set = new HashSet<Integer>();
+		for(int ind = 0 ; ind < arr.length ; ind++) {
+			if(set.contains(arr[ind])) {
+				System.out.println("Duplicated Element Using Set : " + arr[ind]);
+			} else {
+				set.add(arr[ind]);
+			}
+		}
+		
+		Iterator<Integer> itr = set.iterator();
+		while(itr.hasNext()) {
+			System.out.println(itr.next());
 		}
 		
 	}
