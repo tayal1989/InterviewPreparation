@@ -1,8 +1,5 @@
 package com.nokia.dev.array.problems;
 
-import java.util.Map.Entry;
-import java.util.TreeMap;
-
 public class ReduceSizeOfArrayLongSolution {
 
 	public static void myMethod(int[] arr) {
