@@ -4,6 +4,8 @@ public class ThreadNameDemo {
 	public static void main(String[] args) {
 		System.out.println("Default Thread Name : " + Thread.currentThread().getName());
 		System.out.println("Default Thread Priority : " + Thread.NORM_PRIORITY);
+		System.out.println("Default Thread Priority : " + Thread.MIN_PRIORITY);
+		System.out.println("Default Thread Priority : " + Thread.MAX_PRIORITY);
 		
 		Thread t = new Thread();
 		System.out.println("Another Thread Name : " + t.getName());
