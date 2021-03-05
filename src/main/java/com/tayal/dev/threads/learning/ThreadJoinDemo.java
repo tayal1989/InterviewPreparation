@@ -1,6 +1,21 @@
 package com.tayal.dev.threads.learning;
 
-public class ThreadJoinDemo {
+class MyThreadJoinMethod implements Runnable {
+
+	public void run() {
+		try {
+			for(int i = 0 ; i < 10 ; i++) {
+				System.out.println("Sita Thread");
+				Thread.sleep(2000);
+			}
+		} catch(InterruptedException ie) {
+			ie.printStackTrace();
+		}
+	}
+	
+}
+
+class ThreadJoinDemo {
 
 	public static void main(String[] args) throws InterruptedException {
 		MyThreadJoinMethod r = new MyThreadJoinMethod();

@@ -1,6 +1,17 @@
 package com.tayal.dev.threads.learning;
 
-public class ThreadRunnableDemo {
+class MyRunnable implements Runnable {
+
+	public void run() {
+		System.out.println("Child Thread Priority : " + Thread.currentThread().getPriority());
+		for(int i = 0 ; i < 10 ; i++) {
+			System.out.println("Child Thread : " + i);
+		}
+	}
+
+}
+
+class ThreadRunnableDemo {
 
 	public static void main(String[] args) {
 
