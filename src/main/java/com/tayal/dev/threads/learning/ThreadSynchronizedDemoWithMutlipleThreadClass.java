@@ -1,8 +1,8 @@
 package com.tayal.dev.threads.learning;
 
 class DisplayClass {
-//		public void displayNumber() {	//If the method is non-synchronized then irregular output will come
-		public synchronized void displayNumber() {	//If the method is non-synchronized then irregular output will come
+		public void displayNumber() {	//If the method is non-synchronized then irregular output will come
+//		public synchronized void displayNumber() {	//If the method is non-synchronized then irregular output will come
 			try {
 				for(int i = 0 ; i < 5 ; i++) {
 					System.out.print(i);

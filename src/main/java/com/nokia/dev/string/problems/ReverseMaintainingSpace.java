@@ -10,8 +10,11 @@ public class ReverseMaintainingSpace {
 		for(int i = str.length() - 1 ; i >= 0 ; i--) {
 			if(str.charAt(count) == ' ') {
 				outputStr = outputStr + str.charAt(count) ;
+				i = i + 1 ;
 			} else if(str.charAt(i) != ' ') {
 				outputStr = outputStr + str.charAt(i) ;				
+			} else if(str.charAt(i) == ' ') {
+				outputStr = outputStr + str.charAt(--i) ;
 			}
 			count++ ;
 		}

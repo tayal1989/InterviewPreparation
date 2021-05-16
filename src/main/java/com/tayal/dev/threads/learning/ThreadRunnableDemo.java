@@ -17,10 +17,10 @@ class ThreadRunnableDemo {
 
 		MyRunnable r = new MyRunnable();
 		Thread t = new Thread(r);
-		t.setPriority(10);
+		t.setPriority(Thread.MAX_PRIORITY);	// Setting child thread priority, 10 is highest and 1 is lowest
 		t.start();
 		
-		System.out.println("Main Thread Priority : " + Thread.currentThread().getPriority());
+		System.out.println("Main Thread Priority : " + Thread.NORM_PRIORITY);	// Normal priority is 5
 		
 		for(int i = 0 ; i < 10 ; i++) {
 			System.out.println("Main Thread : " + i);

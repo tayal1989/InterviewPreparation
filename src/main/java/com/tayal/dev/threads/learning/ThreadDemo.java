@@ -1,5 +1,8 @@
 package com.tayal.dev.threads.learning;
 
+/*
+ * Defining a thread
+ */
 class MyThread extends Thread {
 	
 	/**
@@ -7,9 +10,10 @@ class MyThread extends Thread {
 	 */
 	public void run() {
 		Thread.currentThread().setName("Child Thread");
-		System.out.println("This line executed by thread : " + Thread.currentThread().getName());
+		System.out.println("In MyThread, This line executed by thread : " + Thread.currentThread().getName());
 		for(int i = 0 ;  i < 10 ; i++) {
-			System.out.println("Child Thread : " + i);
+			System.out.println("Child Thread : " + i);	// Job of thread
+														// Executing child thread i.e. MyThread
 		}
 	}
 	
@@ -36,17 +40,18 @@ class MyThread extends Thread {
 }
 
 class ThreadDemo {
-
-	public static void main(String[] args) {
-		MyThread t = new MyThread();
+	
+	public static void main(String[] args) {	// Main Thread
+		MyThread t = new MyThread();	// Child Thread, Instantiation of thread
 		t.start();	// 2 threads will be created, 1 main thread and another child thread
 		//t.run();	// only 1 thread will be created i.e. main. It will work as normal program
+		//t.run(1);	// To call overloaded run method.
 		
 		for(int i = 0 ; i < 10 ; i++) {
 			System.out.println("Main Thread : " + i);
 		}
 		
-		System.out.println("This line executed by thread : " + Thread.currentThread().getName());
+		System.out.println("In Main, This line executed by thread : " + Thread.currentThread().getName());
 	}
 
 }

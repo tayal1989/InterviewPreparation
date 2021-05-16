@@ -3,7 +3,7 @@ package com.tayal.dev.threads.learning;
 class MyThreadYieldMethod implements Runnable {
 
 	public void run() {
-		Thread.currentThread().setPriority(2);
+		Thread.currentThread().setPriority(2);	// Line 1
 		for(int i = 0 ; i < 10 ; i++) {
 			Thread.yield();
 			System.out.println("Child Thread : " + i);
@@ -25,3 +25,12 @@ class ThreadYieldDemo {
 	}
 
 }
+
+/*
+* If line 1 is commented then both main and child thread will have same priority.
+* However, chances of completing main thread 1 increases as we are introducing 
+* yield() method.
+* 
+* If line is not commented then child method has priority 2 and main method has 
+* priority 5 so 100% chance is that main method will be completed first.
+*/
