@@ -3,7 +3,14 @@ package com.nokia.dev.array.problems;
 public class MirrorImage {
 
 	public static void main(String[] args) {
-		int[] arr = {1, 2, 3, 15} ;
+		// Blank Array
+		// Negative Number = {1, 2, 3, -15}
+		// Positive Number = {1, 2, 3, 15}
+		// {100}
+		// {01, 00, -30, -10}
+		
+		
+		int[] arr = {01, 00, -30, -10} ;
 		int sum = 0 ;
 		int remainder = 0 ;
 		int number = 0 ;

@@ -6,8 +6,8 @@ class MyThreadJoinMethod implements Runnable {
 		try {
 			for(int i = 0 ; i < 10 ; i++) {
 				System.out.println("Sita Thread");
-				//Thread.sleep(2000);	// After 5 SOPs, then Ram thread will begin execution
-				Thread.sleep(10);	// As soon as Sita gets printed 10 times, then Ram thread will begin execution
+				Thread.sleep(2000);	// After 5 SOPs, then Ram thread will begin execution
+				//Thread.sleep(10);	// As soon as Sita gets printed 10 times, then Ram thread will begin execution
 									// no need of waiting for 10 seconds
 			}
 		} catch(InterruptedException ie) {
@@ -24,9 +24,9 @@ class ThreadJoinDemo {
 		Thread t = new Thread(r);
 		t.start();
 		
-		//t.join();	//As this flow belongs to main thread therefore 
+		t.join();	//As this flow belongs to main thread therefore 
 					//Main Thread will wait for child thread completion
-		t.join(10000);
+		//t.join(10000);
 		
 		for(int i = 0 ; i < 10 ; i++) {
 			System.out.println("Ram Thread");
