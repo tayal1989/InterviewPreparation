@@ -1,5 +1,7 @@
 package com.edx.exam.test;
 
+import com.learning.test.JunitMainCode;
+
 import junit.framework.TestCase;
 
 public class JunitTestCode extends TestCase {

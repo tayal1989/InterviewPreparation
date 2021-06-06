@@ -52,6 +52,6 @@ Thumbs.db
 *.wmv
 
 # Eclipse Generated files
-.classpath
-.project
-.settings/
+*.classpath
+*.project
+*.settings/
