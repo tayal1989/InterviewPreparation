@@ -29,6 +29,10 @@ public class ReverseLinkedList {
 	}
 	
 	public Node reverseLinkedList() {
+		if(head == null) {
+			return head ;
+		}
+		
 		Node current = head ;
 		Node next = null ;
 		Node previous = null ;
@@ -40,7 +44,6 @@ public class ReverseLinkedList {
 			current = next ;
 		}
 		
-		head = previous ;
 		return previous ;
 	}
 

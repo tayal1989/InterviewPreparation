@@ -45,40 +45,41 @@ public class MergeSort {
 	}
 
 	private static void sort(int[] arr, int l, int m, int r) {
+		System.out.println("L : " + l + " M : " + m + " R : " + r);
 		int n1 = m - l + 1 ;
 		int n2 = r - m ;
-		int[] arr1 = new int[n1] ;
-		int[] arr2 = new int[n2] ;
+		int[] leftArr = new int[n1] ;
+		int[] rightArr = new int[n2] ;
 		
 		for(int i = 0 ; i < n1 ; i++) {
-			arr1[i] = arr[i + l] ;
+			leftArr[i] = arr[i + l] ;
 		}
 		
 		for(int i = 0 ; i < n2 ; i++) {
-			arr2[i] = arr[m + 1 + i] ;
+			rightArr[i] = arr[m + 1 + i] ;
 		}
 		
 		int i = 0 , j = 0 , k = l ;
 		
 		while(i < n1 && j < n2) {
-			if(arr1[i] <= arr2[j]) {
-				arr[k] = arr1[i] ;
+			if(leftArr[i] <= rightArr[j]) {
+				arr[k] = leftArr[i] ;
 				i++ ;
 			} else {
-				arr[k] = arr2[j] ;
+				arr[k] = rightArr[j] ;
 				j++ ;
 			}
 			k++ ;
 		}
 		
 		while(i < n1) {
-			arr[k] = arr1[i] ;
+			arr[k] = leftArr[i] ;
 			i++ ;
 			k++ ;
 		}
 		
 		while(j < n2) {
-			arr[k] = arr2[j] ;
+			arr[k] = rightArr[j] ;
 			j++ ;
 			k++ ;
 		}

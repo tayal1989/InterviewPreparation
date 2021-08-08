@@ -8,7 +8,7 @@ import java.util.Scanner;
  * 
  * @author	Vishal Agarwal
  * @version	1.0
- * @date		21-Jul-2016
+ * @date	21-Jul-2016
  */
 
 public class ArrayFunctions {
@@ -135,15 +135,15 @@ public class ArrayFunctions {
 	public static void selectionSortingInArray(int[] arr){
 		
 		for(int i = 0; i < arr.length - 1; i++){
-			int ind = i ;
+			int minIndex = i ;
 			for(int j = i + 1; j < arr.length; j++){
-				if(arr[j] < arr[ind]){
-					ind = j ;
+				if(arr[j] < arr[minIndex]){
+					minIndex = j ;
 				}
 			}
 			
-			int temp = arr[ind];
-			arr[ind] = arr[i];
+			int temp = arr[minIndex];
+			arr[minIndex] = arr[i];
 			arr[i] = temp;
 		}
 		

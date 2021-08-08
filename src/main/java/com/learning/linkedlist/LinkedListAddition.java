@@ -2,45 +2,51 @@ package com.learning.linkedlist;
 
 public class LinkedListAddition {
 	
-	Node head ;
+	private Node head ;
 	
-	static class Node {
-		int data ;
-		Node next ;
+	private static class Node {
+		private int data ;
+		private Node next ;
 		
-		Node(int d) {
-			data = d ;
-			next = null ;
+		public Node(int data) {
+			this.data = data ;
+			this.next = null ;
 		}
 	}
 	
 	public void printList() {
-		Node h = head ;
+		Node current = head ;
 		
-		while(h != null) {
-			System.out.print(h.data + " ");
-			h = h.next ;
-		}
+		while(current != null) {
+			System.out.print(current.data + " --> ");
+			current = current.next ;
+		}		
+		System.out.print("null");
 	}
 	
-	public void addAtBeginning(int d) {
-		Node newNode = new Node(d);
-		
-		newNode.next = head ;
-		head = newNode;
+	public void addAtBeginning(int data) {
+		Node newNode = new Node(data);	// Created a newNode whose value is data and next is null
+		/* 
+		 * As head points to null, and newNode next also points to null, we have to insert 
+		 * newNode before head node
+		 */
+		newNode.next = head ;	// Now both are related as their next value is null
+		head = newNode;			// newNode becomes head and now newNode becomes over
+		// Consider with two newNode then it will have more clarity
 	}
 	
-	public void addAtEnd(int d) {
-		Node newNode = new Node(d);
-		newNode.next = null;
-		Node n = head ;
-		
-		while(n.next != null) {
-			n = n.next;
+	public void addAtEnd(int data) {
+		Node newNode = new Node(data);
+		if(head == null) {
+			head = newNode ;
+			return ;
 		}
 		
-		n.next = newNode ;
-		return;
+		Node current = head ;
+		while(current.next != null) {
+			current = current.next;
+		}
+		current.next = newNode ;
 	}
 	
 	public void addAnywhere(Node prevNode, int data) {
@@ -51,39 +57,43 @@ public class LinkedListAddition {
 	}
 	
 	public void deleteByKey(int data) {
-		Node n = head ;
+		Node current = head ;
 		Node prev = null ;
 		
-		if(n.data == data) {
-			head = n.next;
+		if(current != null && current.data == data) {
+			head = current.next;
 			return ;
 		}
 		
-		while(n != null && n.data != data) {
-			prev = n ;
-			n = n.next;
+		while(current != null && current.data != data) {
+			prev = current ;
+			current = current.next;
 		}
 		
-		prev.next = n.next ;
+		if(current == null) {
+			return ;
+		}
+		
+		prev.next = current.next ;
 	}
 	
 	public void deleteByPosition(int position) {
-		Node n = head ;
+		Node current = head ;
 		Node prev = null ;
 		int count = 0 ;
 		
 		if(position == 0) {
-			head = n.next;
+			head = current.next;
 			return ;
 		}
 		
-		while(n != null && position != count) {
-			prev = n ;				
+		while(current != null && position != count) {
+			prev = current ;				
 			count++;
-			n = n.next;
+			current = current.next;
 		}
 		
-		prev.next = n.next;		
+		prev.next = current.next;		
 	}
 	
 	public void deleteCompleteList() {
@@ -91,67 +101,91 @@ public class LinkedListAddition {
 	}
 	
 	public int lengthOfLinkedList() {
-		Node n = head ;
-		int count = 0 ;
+		if(head == null) {
+			return 0 ;
+		}
 		
-		while(n != null) {
+		Node current = head ;
+		int count = 0 ;
+		while(current != null) {
 			count++ ;
-			n = n.next;
+			current = current.next;
 		}
 		return count;
 	}
 	
-	public boolean searchDataInLinkedList(int data) {
-		Node n = head ;
-		boolean flag = false ;
-		while(n != null) {
-			if(n.data == data) {
-				flag = true ;
-			}
-			n = n.next ;
+	public boolean searchDataInLinkedList(int searchElement) {
+		if(head == null) {
+			return false ;
 		}
 		
-		return flag ;
+		Node current = head ;
+		while(current != null) {
+			if(current.data == searchElement) {
+				return true ;
+			}
+			current = current.next ;
+		}
+		
+		return false ;
 	}
 	
 	public int getDataFromNode(int position) {
-		Node n = head ;
+		Node current = head ;
 		int element = 0;
 		int count = 0;
 		
-		while(n != null) {
+		while(current != null) {
 			if(position == count) {
-				return n.data;
+				return current.data;
 			}
 			count++;
-			n = n.next;
+			current = current.next;
 		}
 		
 		return element ;
 	}
 	
 	public void getMiddleNode() {
+		if(head == null) {
+			System.out.println("No elements in the linked list");
+		}
+		
 		Node slow = head ;
 		Node fast = head ;
 		
-		if(head != null) {
-			while(fast != null && fast.next != null) {
-				slow = slow.next ;
-				fast = fast.next.next ;
-			}
-			
-			System.out.println("Middle Node Data --> " + slow.data);
-		}		
+		while(fast != null && fast.next != null) {	// Observe both are fast nodes to handle even and odd length scenarios
+			slow = slow.next ;
+			fast = fast.next.next ;
+		}
+		
+		System.out.println("Middle Node Data --> " + slow.data);
+	}
+	
+	public void getNthNodeFromEndOfLL(int n) {		
+		Node current = head ;
+		int lengthOfLL = lengthOfLinkedList();
+		
+		if(lengthOfLL < n) {
+			return ;
+		}
+		
+		for(int ind = 0 ; ind < lengthOfLL - n ; ind++) {
+			current = current.next ;
+		}
+		
+		System.out.println("Nth node from end of linked list : " + current.data);
 	}
 	
 	public static void main(String[] args) {
 		LinkedListAddition lla = new LinkedListAddition();
-		lla.head = new Node(1);
+		lla.head = new Node(1);		// 1
 		Node second = new Node(2);
 		Node third = new Node(3);
 		
-		lla.head.next = second ;
-		second.next = third ;		
+		// Now we will connect them together to form a chain
+		lla.head.next = second ;	// 1 --> 2
+		second.next = third ;		// 1 --> 2 --> 3 --> null
 		lla.printList();
 		System.out.println();
 		
@@ -172,13 +206,32 @@ public class LinkedListAddition {
 		System.out.println();
 		
 		System.out.println("Length of Linked List --> " + lla.lengthOfLinkedList());
-		System.out.println("Element 3 --> " + lla.searchDataInLinkedList(3));
-		System.out.println("Element 5 --> " + lla.searchDataInLinkedList(5));
+		
+		int searchElement = 3 ;
+		if(lla.searchDataInLinkedList(searchElement)) {
+			System.out.println("Search Key " + searchElement + " Found !!!");
+		} else {
+			System.out.println("Search Key " + searchElement + " Not Found !!!");
+		}
+		
+		searchElement = 5 ;
+		if(lla.searchDataInLinkedList(searchElement)) {
+			System.out.println("Search Key " + searchElement + " Found !!!");
+		} else {
+			System.out.println("Search Key " + searchElement + " Not Found !!!");
+		}
+
 		System.out.println("Element --> " + lla.getDataFromNode(3));
+		
+		lla.printList();
+		System.out.println();
+		lla.getNthNodeFromEndOfLL(2);
 		
 		lla.deleteByKey(0);
 		lla.printList();
 		System.out.println();
+		
+		lla.getNthNodeFromEndOfLL(2);
 		
 		lla.deleteByKey(10);
 		lla.printList();

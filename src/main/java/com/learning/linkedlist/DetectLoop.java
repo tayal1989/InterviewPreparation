@@ -35,11 +35,11 @@ public class DetectLoop {
 		Node fast = head ;
 		
 		while(fast != null && fast.next != null && slow != null) {
-			slow = slow.next ;
 			fast = fast.next.next ;
+			slow = slow.next ;
 			
 			if(slow == fast) {
-				System.out.println(countNodes(slow));
+				System.out.println("No of nodes in loop : " + countNodes(slow));
 				return true ;
 			}
 		}
@@ -47,33 +47,44 @@ public class DetectLoop {
 		return false;
 	}
 	
+	public void createALoopInLinkedList() {
+		Node first = new Node(1) ;
+		Node second = new Node(2) ;
+		Node third = new Node(3) ;
+		Node fourth = new Node(4) ;
+		Node fifth = new Node(5) ;
+		Node sixth = new Node(6) ;
+		
+		head = first ;
+		first.next = second ;
+		second.next = third ;
+		third.next = fourth ;
+		fourth.next = fifth ;
+		fifth.next = sixth ;
+		sixth.next = third ;
+	}
+	
 	public int countNodes(Node slow) {
-		Node n = slow ;
+		Node current = slow ;
 		int count = 1 ;
 		
-		while(n.next != slow) {
+		while(current.next != slow) {
 			count++ ;
-			n = n.next ;
+			current = current.next ;
 		}
 		return count ;
 	}
 
 	public static void main(String[] args) {
 		DetectLoop dl = new DetectLoop();
-		dl.push(1);
-		dl.push(2);
-		dl.push(3);
-		dl.push(4);
-		
-		dl.printList();
-		System.out.println();
-		
-		dl.head.next.next.next.next = dl.head ;
+		dl.createALoopInLinkedList();		
+//		dl.printList();
+//		System.out.println();
 		
 		if(dl.detectLoopInLL()) {
-			System.out.println("Found");
+			System.out.println("Loop Found");
 		} else {
-			System.out.println("Not found");
+			System.out.println("No loop found");
 		}
 	}
 
