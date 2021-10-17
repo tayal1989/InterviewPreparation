@@ -3,7 +3,6 @@ package com.learning.arrays;
 public class LastSurviving {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		int[] arr = new int[101] ;
 		
 		System.out.println("Initial Players : ");
