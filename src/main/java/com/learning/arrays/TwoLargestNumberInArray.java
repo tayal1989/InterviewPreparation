@@ -19,9 +19,8 @@ package com.learning.arrays;
 public class TwoLargestNumberInArray {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		
-		int[] arr = {8, 9, 11, 10, 12} ;
+		int[] arr = {8, 9, 11, 12, 12} ;
 		
 		int largestNo = arr[0] ;
 		int secondLargestNo = arr[1] ;
@@ -35,13 +34,13 @@ public class TwoLargestNumberInArray {
 				largestNo = arr[i] ;
 			}
 			
-			if((arr[i] < largestNo) && (arr[i] > secondLargestNo)){
+			if((arr[i] < largestNo) && (arr[i] > secondLargestNo) && (arr[i] != largestNo)){
 				//thirdLargestNo = secondLargestNo ;	// To find 3rd largest no
 				secondLargestNo = arr[i] ;
 			}	
 			
 			//	To find 3rd largest no
-			if((arr[i] < secondLargestNo) && (arr[i] > thirdLargestNo) && ((arr[i] < largestNo))){
+			if((arr[i] < secondLargestNo) && (arr[i] > thirdLargestNo) && (arr[i] < largestNo) && (arr[i] != secondLargestNo)){
 				thirdLargestNo = arr[i] ;
 			}
 			
@@ -50,7 +49,7 @@ public class TwoLargestNumberInArray {
 		
 		System.out.println("Largest No : " + largestNo);
 		System.out.println("Second largest No : " + (secondLargestNo));
-		System.out.println("Third largest No : " + (thirdLargestNo));
+//		System.out.println("Third largest No : " + (thirdLargestNo));
 	}
 
 }

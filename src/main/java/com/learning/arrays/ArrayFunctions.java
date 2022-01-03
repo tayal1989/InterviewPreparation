@@ -18,7 +18,7 @@ public class ArrayFunctions {
 	 * @param arr - Array with values
 	 * @category complexity - O(n)
 	 */
-	public static void Avg(int[] arr){
+	public static void average(int[] arr){
 		int sum = 0 ;
 		
 		for(int i = 0; i < arr.length; i++){
@@ -358,6 +358,30 @@ public class ArrayFunctions {
 	}
 	
 	/**
+	 * It will reverse the elements of the array
+	 * @param arr - array elements
+	 */
+	public static void reverseOfArray(int[] arr) {
+		System.out.println("Actual array : ");
+		
+		for(int i = 0; i < arr.length; i++){
+			System.out.print(arr[i] + " ");
+		}
+		
+		for(int i = 0, j = arr.length - 1; i < arr.length / 2; i++, j--) {
+			int temp = arr[i];
+			arr[i] = arr[j];
+			arr[j] = temp;
+		}
+		
+		System.out.println("\nNew array after reversing the elements : ");
+		
+		for(int i = 0; i < arr.length; i++){
+			System.out.print(arr[i] + " ");
+		}
+	}
+	
+	/**
 	 * Main function to run this class, covers all the array functions
 	 * @param args - user defined arguments
 	 */
@@ -381,7 +405,8 @@ public class ArrayFunctions {
 		}
 		
 		ArrayFunctions.findLengthOfArr(array);
-		ArrayFunctions.Avg(array);
+		ArrayFunctions.average(array);
+		ArrayFunctions.reverseOfArray(array);
 		/*ArrayFunctions.largestNumberInArray(array);
 		ArrayFunctions.smallestNumberInArray(array);
 		ArrayFunctions.swapNumberInArray(array);
