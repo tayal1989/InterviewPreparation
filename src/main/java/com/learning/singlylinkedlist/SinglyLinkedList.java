@@ -13,11 +13,12 @@ public class SinglyLinkedList {
 		System.out.print("null");
 	}
 	
-	public void lengthOfNode() {
+	public int lengthOfNode() {
 		ListNode current = head;
 		int count = 0;
 		if(head == null) {
-			System.out.println("\nLength of singly linked list : " + count);
+			
+			return count;
 		}
 		
 		while(current != null) {
@@ -26,8 +27,9 @@ public class SinglyLinkedList {
 		}
 		
 		if(count > 0) {
-			System.out.println("\nLength of singly linked list : " + count);
+			return count;
 		}
+		return count;
 	}
 	
 	public void insertNodeAtBeginning(int data) {
@@ -73,6 +75,89 @@ public class SinglyLinkedList {
 			current.next = newNode;
 		}
 	}
+	
+	public ListNode deleteFirstNode() {
+		ListNode current = head;
+		if(head == null) {
+			System.out.println("No nodes");
+			return null;
+		}
+		
+		head = current.next;
+		current.next = null;
+		return current;
+	}
+	
+	public ListNode deleteLastNode() {
+		ListNode current = head;
+		if(head == null || head.next == null) {
+			if(head.next == null) {
+				head = null;
+			} else {
+				System.out.println("No nodes");
+			}
+			return head;
+		}
+		
+		while(current.next.next != null) {
+			current = current.next;
+		}
+		
+		current.next = null;
+		return current;
+	}
+	
+	public void deleteNodeAnywhere(int position) {
+		if(head == null) {
+			System.out.println("No nodes found");
+			return;
+		} else if (position == 1) {
+			head = head.next;
+		} else {
+			ListNode previous = head;
+			int count = 1;
+			while(count < position - 1) {
+				previous = previous.next;
+				count++;
+			}
+			ListNode current = previous.next;
+			previous.next = current.next;
+		}
+	}
+	
+	public void searchElement(int data) {
+		ListNode current = head;
+		while(current != null) {
+			if(current.data == data) {
+				System.out.println("Element Found");
+				return;
+			}
+			current = current.next;
+		}
+		System.out.println("Element not found");
+	}
+	
+	public void reverseLinkedList() {
+		if(head == null) {
+			return;
+		}
+		ListNode current = head;
+		ListNode previous = null;
+		ListNode next = null;
+		while(current != null) {
+			next = current.next;
+			current.next = previous;
+			previous = current;
+			current = next;
+		}
+		
+		while(previous != null) {
+			System.out.print(previous.data + " --> ");
+			previous = previous.next;
+		}
+		
+		System.out.print("null\n");
+	}
 
 	public static void main(String[] args) {
 		SinglyLinkedList sll = new SinglyLinkedList();
@@ -88,19 +173,45 @@ public class SinglyLinkedList {
 		third.next = fourth;
 		
 		sll.printList();
-		sll.lengthOfNode();
+		System.out.println("\nLength of singly linked list : " + sll.lengthOfNode());
 		
 		sll.insertNodeAtBeginning(0);
 		sll.printList();
-		sll.lengthOfNode();
+		System.out.println("\nLength of singly linked list : " + sll.lengthOfNode());
 		
 		sll.insertNodeAtEnd(50);
 		sll.printList();
-		sll.lengthOfNode();
+		System.out.println("\nLength of singly linked list : " + sll.lengthOfNode());
 		
 		sll.insertNodeAtPosition(7, 25);
 		sll.printList();
-		sll.lengthOfNode();
+		System.out.println("\nLength of singly linked list : " + sll.lengthOfNode());
+		
+		sll.searchElement(240);
+		
+		/*
+		while(sll.lengthOfNode() != 0) {
+			sll.deleteFirstNode();
+			sll.printList();
+			System.out.println("\nLength of singly linked list : " + sll.lengthOfNode());
+		}
+		*/
+		/*
+		while(sll.lengthOfNode() != 0) {
+			sll.deleteLastNode();
+			sll.printList();
+			System.out.println("\nLength of singly linked list : " + sll.lengthOfNode());
+		}
+		*/
+		sll.deleteNodeAnywhere(1);
+		sll.printList();
+		System.out.println("\nLength of singly linked list : " + sll.lengthOfNode());
+		
+		sll.deleteNodeAnywhere(4);
+		sll.printList();
+		System.out.println("\nLength of singly linked list : " + sll.lengthOfNode());
+		
+		sll.reverseLinkedList();
 	}
 
 }
