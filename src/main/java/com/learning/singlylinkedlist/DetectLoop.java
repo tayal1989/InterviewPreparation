@@ -14,13 +14,6 @@ public class DetectLoop {
 		}
 	}
 	
-	public void push(int data) {
-		Node newNode = new Node(data) ;
-		
-		newNode.next = head ;
-		head = newNode ;
-	}
-	
 	public void printList() {
 		Node n = head ;
 		
@@ -39,12 +32,23 @@ public class DetectLoop {
 			slow = slow.next ;
 			
 			if(slow == fast) {
+				Node temp = getStartingNodeOfLoop(slow);
+				System.out.println(temp.data + " is the starting point of the loop");
 				System.out.println("No of nodes in loop : " + countNodes(slow));
 				return true ;
 			}
 		}
 		
 		return false;
+	}
+	
+	public Node getStartingNodeOfLoop(Node slow) {
+		Node temp = head;
+		while(temp != slow) {
+			temp = temp.next;
+			slow = slow.next;
+		}
+		return temp;
 	}
 	
 	public void createALoopInLinkedList() {

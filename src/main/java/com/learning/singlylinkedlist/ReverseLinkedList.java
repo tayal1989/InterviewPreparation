@@ -49,11 +49,15 @@ public class ReverseLinkedList {
 
 	public static void main(String[] args) {
 		ReverseLinkedList ll = new ReverseLinkedList();
+		for(int i = 0; i < 100 ; i++) {
+			ll.push(i);
+		}
+		/*
 		ll.push(1);
 		ll.push(2);
 		ll.push(3);
 		ll.push(4);
-		ll.push(5);
+		ll.push(5); */
 		ll.printList();
 		System.out.println();
 		

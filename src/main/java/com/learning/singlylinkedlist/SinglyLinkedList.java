@@ -125,6 +125,33 @@ public class SinglyLinkedList {
 		}
 	}
 	
+	public void deleteNodeByKey(int data) {
+		if(head == null) {
+			System.out.println("No nodes found");
+			return;
+		}
+		
+		ListNode current  = head;
+		ListNode previous = null;
+		
+		if(current != null && current.data == data) {
+			head = current.next;
+			return;
+		}
+		
+		while(current != null && current.data != data) {
+			previous = current;
+			current = current.next;
+		}
+		
+		if(current == null) {
+			System.out.println("No such nodes with the given key found");
+			return;
+		}
+		
+		previous.next = current.next;
+	}
+	
 	public void searchElement(int data) {
 		ListNode current = head;
 		while(current != null) {
@@ -210,6 +237,11 @@ public class SinglyLinkedList {
 		sll.deleteNodeAnywhere(4);
 		sll.printList();
 		System.out.println("\nLength of singly linked list : " + sll.lengthOfNode());
+		
+		
+		sll.deleteNodeByKey(50);
+		sll.printList();
+		System.out.println();
 		
 		sll.reverseLinkedList();
 	}
