@@ -1,6 +1,6 @@
 package a04.publicstaticvoidmain;
 
-public class OverloadingMainMethod {
+public class Main {
 	
 	public static void main(int[] args) {
 		System.out.println("In int args");
