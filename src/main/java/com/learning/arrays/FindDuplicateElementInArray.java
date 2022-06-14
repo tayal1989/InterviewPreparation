@@ -7,7 +7,20 @@ import java.util.Set;
  * @author Vishal Agarwal
  * @version Creation time: 03-Sep-2021 2:07:44 pm
  * @classDescription
-*/
+ * /**
+ * <h1>FindDuplicateNumberInArray</h1>
+ * The FindDuplicateNumberInArray.java program will find all duplicate numbers
+ * present in array.
+ * 
+ * <p>
+ * For example : <br>
+ * input1 = {6, 8, 9, 1, 8, 5, 9, 7, 2, 2} ;	<br>
+ *	will give the duplicate elements as 8, 9 and 2
+ *
+ * @author	Vishal Agarwal
+ * @version	1.0
+ * @category O(n)
+ */
 
 public class FindDuplicateElementInArray {
 

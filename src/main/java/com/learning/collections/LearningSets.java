@@ -16,10 +16,10 @@ public class LearningSets {
 		
 		Iterator<Integer> itr = set.iterator();
 		while(itr.hasNext()) {
-			System.out.println(itr.next());
+			System.out.print(itr.next() + " ");
 		}
 		
-		System.out.println(set);	// Set don't have get function
+		System.out.println("\n" + set);	// Set don't have get function
 	}
 
 }
