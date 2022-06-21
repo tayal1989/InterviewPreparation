@@ -17,7 +17,6 @@ package interfaces.and.abstracts.interview.question;
 public class FinalClassMain extends FinalClass {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		FinalClassMain fcm = new FinalClassMain() ;
 		fcm.area();
 		fcm.perimeter();

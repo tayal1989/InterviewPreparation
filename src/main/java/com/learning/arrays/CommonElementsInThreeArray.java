@@ -21,7 +21,6 @@ package com.learning.arrays;
 public class CommonElementsInThreeArray {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		int[] input1 = {1, 7, 7, 10, 20, 20, 40, 80} ;	// 6
 		int[] input2 = {6, 7, 7, 20, 20, 80, 100} ;	// 5
 		int[] input3 = {3, 7, 7, 15, 20, 20, 30, 70, 80, 120} ;	// 8

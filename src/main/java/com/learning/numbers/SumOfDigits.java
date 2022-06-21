@@ -6,7 +6,6 @@ import java.util.Scanner;
 public class SumOfDigits {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		Scanner sc = new Scanner(System.in) ;
 		System.out.println("Enter a number :") ;
 		long number = 0 ;
@@ -16,7 +15,6 @@ public class SumOfDigits {
 		} catch (InputMismatchException e) {
 			System.out.println("This is not a number");
 			System.exit(0);
-			//System.out.println(e.getMessage());
 		}
 		
 		long rem, sum = 0 ;

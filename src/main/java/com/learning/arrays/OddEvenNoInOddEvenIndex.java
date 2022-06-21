@@ -23,7 +23,6 @@ import java.util.Scanner;
 public class OddEvenNoInOddEvenIndex {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		//int[] arr = {1, 2, 3, 4, 5, 6} ;
 		
 		Scanner sc = new Scanner(System.in) ;

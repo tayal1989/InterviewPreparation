@@ -17,8 +17,6 @@ package com.learning.arrays;
 public class MaxProductFromArray {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
 		int[] arr = {1, 2, 3, -1, 4, 5, 6, -2, 8, 2, 1};
 		
 		int curr = 1, max = arr[0] ;

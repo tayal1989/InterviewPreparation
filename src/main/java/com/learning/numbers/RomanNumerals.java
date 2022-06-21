@@ -25,9 +25,6 @@ public class RomanNumerals {
 	}
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		//char[] romanNum = new char[]{'I', 'V', 'X'} ;
-				
 		Scanner sc = new Scanner(System.in) ;
 		System.out.println("Enter first roman number : ");
 		String firstRomanNum = sc.next() ;

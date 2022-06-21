@@ -11,8 +11,6 @@ import java.util.Scanner;
 public class ArmstrongNumber {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub // NOSONAR
-		
 		Scanner sc = new Scanner(System.in) ;
 		System.out.println("Enter the no to be checked : ");
 		int number = sc.nextInt() ;

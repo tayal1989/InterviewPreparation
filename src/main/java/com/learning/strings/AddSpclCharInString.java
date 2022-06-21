@@ -3,7 +3,6 @@ package com.learning.strings;
 public class AddSpclCharInString {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		char[] str = "I am a good boy".toCharArray() ;
 		String outStr = "" ;
 		

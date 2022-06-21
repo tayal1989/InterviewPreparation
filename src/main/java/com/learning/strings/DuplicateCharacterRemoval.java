@@ -8,8 +8,6 @@ import java.util.ArrayList;
 public class DuplicateCharacterRemoval {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
 		String word = "rmsm" ;
 		
 		int[] strArr = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0} ;

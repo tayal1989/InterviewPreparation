@@ -10,7 +10,9 @@ public class Merge2SortedArray {
 		
 		int m = a.length ;
 		int n = b.length ;
-		int i = 0, j = 0, k = 0 ;
+		int i = 0;
+		int j = 0;
+		int k = 0;
 		
 		while(i < m && j < n) {
 			if(a[i] < b[j]) {

@@ -6,7 +6,6 @@ import java.util.LinkedHashMap;
 public class FindFirstNonRepeatingCharacter {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		boolean flag = false ;
 		
 		String inputStr = "aabcdb"; // # c

@@ -3,7 +3,7 @@ package com.learning.numbers;
 public class ReverseNumber {
 
 	public static void main(String[] args) {
-		int number = -123 ;
+		int number = 123 ;
 		int sum = 0 ;
 		int remainder = 0 ;
 		boolean flag = false ;

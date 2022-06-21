@@ -17,7 +17,7 @@ package com.learning.numbers;
 public class NextLargerNumberComboOf3And5 {
 
 	public static void main(String[] args) {
-		int num = 899 ;
+		int num = 231 ;
 		String str = String.valueOf(num);
 		int[] arr = new int[str.length()];
 		int rem = 0;

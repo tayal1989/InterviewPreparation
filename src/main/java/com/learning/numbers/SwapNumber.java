@@ -5,8 +5,6 @@ import java.util.Scanner;
 public class SwapNumber {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Raghav ji, please enter first number :-- ");
 		short firstNumber = sc.nextShort();

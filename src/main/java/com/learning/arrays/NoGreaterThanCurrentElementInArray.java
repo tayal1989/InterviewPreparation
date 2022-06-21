@@ -21,8 +21,6 @@ package com.learning.arrays;
 public class NoGreaterThanCurrentElementInArray {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		
 		int[] arr = {1, 2, 3, 4, 5, 6, 7, 8} ;
 		int[] arr1 = new int[arr.length] ; 
 		

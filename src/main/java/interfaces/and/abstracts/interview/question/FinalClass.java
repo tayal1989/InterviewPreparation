@@ -17,12 +17,10 @@ package interfaces.and.abstracts.interview.question;
 public abstract class FinalClass implements SecondClass {
 
 	public void area() {
-		// TODO Auto-generated method stub
 		System.out.println("Method from FirstClass but inside FinalClass");
 	}
 
 	public void perimeter() {
-		// TODO Auto-generated method stub
 		System.out.println("Method from SecondClass but inside FinalClass");
 	}
 
