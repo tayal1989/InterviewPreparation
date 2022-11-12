@@ -1,5 +1,7 @@
 package com.learning.singlylinkedlist;
 
+//06 Program
+
 public class RemoveDuplicateFromSortedSinglyLinkedList {
 	Node head;
 	

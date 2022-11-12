@@ -3,7 +3,19 @@
   <groupId>com.vishalagarwal.java.programs</groupId>
   <artifactId>interviewpreparation</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  <name>InterviewPreparation</name>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>8</source>
+                    <target>8</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+    <name>InterviewPreparation</name>
   <description>Includes program for array,number,string,linkedlist</description>
   
   <dependencies>

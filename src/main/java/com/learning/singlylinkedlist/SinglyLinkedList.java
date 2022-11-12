@@ -1,5 +1,7 @@
 package com.learning.singlylinkedlist;
 
+// 02 Program
+
 public class SinglyLinkedList {
 	
 	private ListNode head;
@@ -16,8 +18,7 @@ public class SinglyLinkedList {
 	public int lengthOfNode() {
 		ListNode current = head;
 		int count = 0;
-		if(head == null) {
-			
+		if(head == null) {			
 			return count;
 		}
 		
@@ -26,9 +27,6 @@ public class SinglyLinkedList {
 			current = current.next;
 		}
 		
-		if(count > 0) {
-			return count;
-		}
 		return count;
 	}
 	
@@ -60,6 +58,7 @@ public class SinglyLinkedList {
 	public void insertNodeAtPosition(int position, int data) {
 		ListNode newNode = new ListNode(data);
 		ListNode current = head;
+		
 		if(head == null) {
 			head = newNode;
 		} else if(position == 1) {
@@ -83,8 +82,8 @@ public class SinglyLinkedList {
 			return null;
 		}
 		
-		head = current.next;
-		current.next = null;
+		head = head.next;
+		current.next = null;	// In order to break the connection of first node with second
 		return current;
 	}
 	

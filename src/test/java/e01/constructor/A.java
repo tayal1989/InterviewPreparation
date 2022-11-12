@@ -1,6 +1,10 @@
 package e01.constructor;
 
 public class A {
+	
+	static {
+		System.out.println("Static block of A");
+	}
 
 	public A() {
 		System.out.println("In default constructor - A");

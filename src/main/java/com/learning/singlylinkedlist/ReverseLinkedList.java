@@ -1,7 +1,9 @@
 package com.learning.singlylinkedlist;
 
+// 03 Program
+
 public class ReverseLinkedList {
-	Node head ;
+	static Node head ;
 	
 	static class Node {
 		int data ;
@@ -19,13 +21,14 @@ public class ReverseLinkedList {
 		head = newNode ;
 	}
 	
-	public void printList() {
+	public static void printList(Node head) {
 		Node n = head ;
 		
 		while(n != null) {
 			System.out.print(n.data + " --> ");
 			n = n.next ;
 		}
+		System.out.print("null");
 	}
 	
 	public Node reverseLinkedList() {
@@ -49,20 +52,14 @@ public class ReverseLinkedList {
 
 	public static void main(String[] args) {
 		ReverseLinkedList ll = new ReverseLinkedList();
-		for(int i = 0; i < 100 ; i++) {
+		for(int i = 10; i > 0 ; i--) {
 			ll.push(i);
 		}
-		/*
-		ll.push(1);
-		ll.push(2);
-		ll.push(3);
-		ll.push(4);
-		ll.push(5); */
-		ll.printList();
+		printList(head);
 		System.out.println();
 		
-		ll.reverseLinkedList();
-		ll.printList();
+		Node current = ll.reverseLinkedList();
+		printList(current);
 	}
 
 }
