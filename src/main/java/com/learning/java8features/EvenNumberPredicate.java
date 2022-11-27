@@ -6,8 +6,8 @@ public class EvenNumberPredicate {
     public static void main(String[] args) {
         Predicate<Integer> p1 = i -> i % 2 == 0;
 
-        for(int i = 0 ; i < 10 ; i++) {
-            System.out.println(i + " is an even number : " + p1.test(i));
+        for(int number = 0 ; number < 10 ; number++) {
+            System.out.println(number + " is an even number : " + p1.test(number));
         }
     }
 }
