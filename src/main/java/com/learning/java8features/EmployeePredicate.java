@@ -28,6 +28,7 @@ class MainEmployeePredicate {
         Predicate<EmployeePredicate> p1 = ep -> ep.salary > 2000;
 
         for(int i = 0; i < list.size(); i++) {
+            // It will print those employees whose salary > 2000
             if(p1.test(list.get(i))) {
                 System.out.println(list.get(i));
             }

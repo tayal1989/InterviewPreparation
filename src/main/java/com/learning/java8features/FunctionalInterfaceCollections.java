@@ -6,7 +6,6 @@ import java.util.Comparator;
 
 public class FunctionalInterfaceCollections {
     public static void main(String[] args) {
-
         ArrayList<Integer> al = new ArrayList<>();
         al.add(15);
         al.add(10);
@@ -18,7 +17,6 @@ public class FunctionalInterfaceCollections {
         Collections.sort(al, c1);
 
         System.out.println("After sorting, array list : " + al);
-
     }
 
 }
