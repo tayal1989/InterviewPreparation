@@ -1,15 +1,14 @@
 package com.learning.practise;
 
 import java.util.*;
-import java.util.Map.Entry;
 
 public class MinValueInHashMap {
 
-	public static void main(String args[]) throws Exception 
+	public static void main(String args[])
     { 
   
         // Creating hashMap 
-        Map<String, Integer> map = new HashMap<String, Integer>(); 
+        Map<String, Integer> map = new HashMap<>();
   
         // Putting key-value pairs in map 
         map.put("F", 10); 
@@ -21,7 +20,7 @@ public class MinValueInHashMap {
 //        System.out.println("Map: " + map); 
 //        
 //        int maxValueInMap=(Collections.min(map.values()));  // This will return max value in the Hashmap
-//        for (Entry<String, Integer> entry : map.entrySet()) {  // Itrate through hashmap
+//        for (Entry<String, Integer> entry : map.entrySet()) {  // Iterate through hashmap
 //            if (entry.getValue()==maxValueInMap) {
 //                System.out.println(entry.getKey());     // Print the key with max value
 //            }
