@@ -23,6 +23,26 @@ public class DesignPattern {
 		System.out.println("User 3 Accessing Cloud resource for third time");
 		SingletonClass singletonClass3 = SingletonClass.getSharedInstance();
 		System.out.println("Hashcode for shared cloud user 3 : " + singletonClass3.hashCode());
+
+		// Singleton Eager Way User 1
+		System.out.println("User 1 Accessing Cloud resource for first time using eager way");
+		SingletonEagerWay singletonEagerWay1 = SingletonEagerWay.getSingletonEagerWay();
+		System.out.println("Hashcode for shared cloud user 1 : " + singletonEagerWay1.hashCode());
+
+		// Singleton Eager Way User 2
+		System.out.println("User 2 Accessing Cloud resource for second time using eager way");
+		SingletonEagerWay singletonEagerWay2 = SingletonEagerWay.getSingletonEagerWay();
+		System.out.println("Hashcode for shared cloud user 1 : " + singletonEagerWay2.hashCode());
+
+		// Singleton Thread Safe Way User 1
+		System.out.println("User 1 Accessing Cloud resource for first time using thread safe way");
+		SingletonThreadSafe singletonThreadSafe1 = SingletonThreadSafe.getSingletonThreadSafe();
+		System.out.println("Hashcode for shared cloud user 1 : " + singletonThreadSafe1.hashCode());
+
+		// Singleton Thread Safe Way User 2
+		System.out.println("User 1 Accessing Cloud resource for first time using thread safe way");
+		SingletonThreadSafe singletonThreadSafe2 = SingletonThreadSafe.getSingletonThreadSafe();
+		System.out.println("Hashcode for shared cloud user 1 : " + singletonThreadSafe2.hashCode());
 	}
 
 }
