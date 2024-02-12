@@ -21,6 +21,8 @@ package com.learning.arrays;
 public class CommonElementsInThreeArray {
 
 	public static void main(String[] args) {
+		long startTime = System.currentTimeMillis();
+		long startTimeNano = System.nanoTime();
 		int[] input1 = {1, 7, 7, 10, 20, 20, 40, 80} ;	// 6
 		int[] input2 = {6, 7, 7, 20, 20, 80, 100} ;	// 5
 		int[] input3 = {3, 7, 7, 15, 20, 20, 30, 70, 80, 120} ;	// 8
@@ -74,7 +76,18 @@ public class CommonElementsInThreeArray {
 		}
 		
 		System.out.println("Loop count : " + loop);
-		
+		long endTime = System.currentTimeMillis();
+		long endTimeNano = System.nanoTime();
+		long executionTime = endTime - startTime;
+		long executionTimeMicro = (endTimeNano - startTimeNano) / 1000;
+		System.out.println("Execution time: " + executionTime + " milliseconds");
+		System.out.println("Execution time: " + executionTimeMicro + " microseconds");
+
+		if(executionTimeMicro > 300 && executionTimeMicro < 350) {
+			System.out.println("Pass");
+		} else {
+			System.out.println("Fail");
+		}
 	}
 
 }
